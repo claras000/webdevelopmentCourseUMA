@@ -1,0 +1,26 @@
+/* font dm sans*/
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kufam:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* navbar elements*/
+.imgLogo {
+  width: 100px;
+  height: auto;
+}
+
+.iconSize {
+  width: 50px;
+  height: auto;
+  padding: 0 8px;
+}
+
+nav a {
+  font-family: "DM Sans", sans-serif;
+}
+
+.buttonLogin {
+  border-radius: 25px;
+  font-family: "DM Sans", sans-serif;
+  padding: 5px 20px;
+  margin-left: 20px;
+}
