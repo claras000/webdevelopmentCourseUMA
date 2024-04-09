@@ -24,3 +24,8 @@ nav a {
   padding: 5px 20px;
   margin-left: 20px;
 }
+
+.slider {
+  width: 100%;
+  height: auto;
+}
