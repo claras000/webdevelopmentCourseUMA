@@ -20,7 +20,7 @@ var products = [
   },
 ];
 
-var productsDiv = document.getElementById("products");
+var productsDiv = document.getElementById("products").innerHTML;
 var productsHTML = "";
 
 products.forEach(function (product) {
@@ -35,4 +35,4 @@ products.forEach(function (product) {
 });
 
 // Setzen Sie den HTML-Inhalt der products-Div
-productsDiv.innerHTML = productsHTML;
+productsDiv = productsHTML;
