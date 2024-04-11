@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Hardware Webshop register</title>
+    <title>Hardware Webshop egister</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -74,5 +74,70 @@
       </div>
     </nav>
     <!-- #end navbar -->
+
+    <!-- #register-->
+    <section class="register">
+      <h1><b>Register Now</b></h1>
+      <div class="form">
+        <form class="login-form" id="submitForm">
+          <input type="hidden" id="action" value="register" />
+          <label for="firstName">First Name</label>
+
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            required
+          /><br /><br />
+
+          <label for="lastName">Last Name</label>
+
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            required
+          /><br /><br />
+
+          <label for="email">Email:</label>
+
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="password">Password:</label>
+
+          <input
+            type="password"
+            id="password"
+            name="password"
+            onblur="checkPassword()"
+            required
+          /><br /><br />
+          <span id="passwordHint" class="hint"></span>
+
+          <label for="confirmPassword">Confirm Password:</label>
+
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            onblur="checkPasswordsMatch()"
+            required
+          /><br /><br />
+          <span id="confirmPasswordHint" class="hint"></span><br /><br />
+
+          <button
+            type="button"
+            id="submitButton"
+            class="button btn btn-primary"
+          >
+            Login
+          </button>
+        </form>
+
+        <div id="response"></div>
+        <div id="problemReport"></div>
+      </div>
+    </section>
+    <!-- #end register -->
   </body>
 </html>
