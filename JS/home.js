@@ -20,19 +20,20 @@ var products = [
   },
 ];
 
-var productsDiv = document.getElementById("products").innerHTML;
+var productsDiv = document.getElementById("products");
 var productsHTML = "";
 
 products.forEach(function (product) {
   productsHTML += "<div class='product col-md-4 '>";
-  productsHTML += "<h3>" + product.name + "</h3>";
   productsHTML +=
     "<img src='" + product.image + "' alt='" + product.name + "' />";
-  productsHTML += "<p>Preis: " + product.price + "</p>";
+  productsHTML += "<div class='d-flex justify-content-between'>";
+  productsHTML += "<h3>" + product.name + "</h3>";
+  productsHTML += "<p>Preis: " + product.price + "</p></div>";
   productsHTML +=
     "<a href='" + product.buyLink + "' class='buy-button'>Kaufen</a>";
   productsHTML += "</div>";
 });
 
 // Setzen Sie den HTML-Inhalt der products-Div
-productsDiv = productsHTML;
+productsDiv.innerHTML = productsHTML;
