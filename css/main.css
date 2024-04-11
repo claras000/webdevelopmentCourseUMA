@@ -29,3 +29,15 @@ nav a {
   width: 100%;
   height: auto;
 }
+.Products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
