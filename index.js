@@ -1,14 +1,13 @@
+// index.js
 const express = require("express");
 const app = express();
 
-// Middleware to parse JSON bodies
-app.use(express.json());
+app.set("view engine", "ejs");
 
-// Serve static files from the 'public' directory
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
-// Start the server
-const PORT = process.env.PORT || 3002;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// A sample route
+app.get("/", (req, res) => res.send("Hello World!"));
+
+// Start the Express server
+app.listen(3002, () => console.log("Server running on port 3002!"));
