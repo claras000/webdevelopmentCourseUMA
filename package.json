@@ -1,0 +1,17 @@
+{
+  "name": "webdevelopmentcourseuma",
+  "version": "1.0.0",
+  "description": "webproject 2023 UMA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "stop": "node stop"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
