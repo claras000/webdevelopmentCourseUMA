@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
+//const MongoStore = require("connect-mongo")(session);
+
 const path = require("path");
 const crypt = require("bcrypt");
 const collection = require("./models/users.js"); //load model user
@@ -53,15 +55,22 @@ app.get("/login", (req, res) => {
 });
 
 //make session
-const MongoStore = require("connect-mongo")(session);
 
-app.use(
-  session({
-    secret: "your-secret-key", // Replace with your own secret key
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+//console.log("mongoose.connection:", mongoose.connection);
+
+//console.log("MongoStore:", MongoStore);
+
+//const store = MongoStore({ mongooseConnection: mongoose.connection });
+//console.log("store:", store);
+
+//app.use(
+// session({
+//  secret: "your-secret-key",
+//  resave: false,
+//  saveUninitialized: false,
+//  store: store,
+// })
+//);
 
 //register
 app.post("/register", async (req, res) => {
@@ -97,7 +106,7 @@ app.post("/login", async (req, res) => {
     }
 
     // Start session after successful login
-    req.session.user = { email: req.body.email }; // You can store any user data you need in the session
+    //  req.session.user = { email: req.body.email }; // You can store any user data you need in the session
     // Successful login, redirect to home page
     res.redirect("/home");
   } catch (error) {
