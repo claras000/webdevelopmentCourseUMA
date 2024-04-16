@@ -8,6 +8,7 @@ const path = require("path");
 const crypt = require("bcrypt");
 const collection = require("./models/users.js"); //load model user
 const sessionSchema = require("./models/session.js"); //load model session
+const bcrypt = require("bcrypt"); //to secure password
 
 const app = express(); //create express application
 const PORT = process.env.PORT || 4000; // chosing port
@@ -90,17 +91,25 @@ app.listen(PORT, () => {
   console.log(`server started at http://localhost:${PORT}`);
 });
 
+//login
 app.post("/login", async (req, res) => {
   try {
     const check = await collection.findOne({ email: req.body.email });
+    console.log("User found:", check);
+
     if (!check) {
       return res.status(401).send("No email found.");
     }
+
+    const sanitizedPassword = req.body.password.replace(/./g, "*");
+    console.log("Sanitized password:", sanitizedPassword);
 
     const isPasswordMatch = await bcrypt.compare(
       req.body.password,
       check.password
     );
+    console.log("Password match:", isPasswordMatch);
+
     if (!isPasswordMatch) {
       return res.status(401).send("Wrong password");
     }
