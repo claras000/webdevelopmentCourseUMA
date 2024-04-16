@@ -5,6 +5,7 @@ const session = require("express-session");
 const path = require("path");
 const crypt = require("bcrypt");
 const collection = require("./models/users.js"); //load model user
+const sessionSchema = require("./models/session.js"); //load model session
 
 const app = express(); //create express application
 const PORT = process.env.PORT || 4000; // chosing port
@@ -51,6 +52,17 @@ app.get("/login", (req, res) => {
   res.render("login");
 });
 
+//make session
+const MongoStore = require("connect-mongo")(session);
+
+app.use(
+  session({
+    secret: "your-secret-key", // Replace with your own secret key
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
 //register
 app.post("/register", async (req, res) => {
   const data = {
@@ -84,6 +96,8 @@ app.post("/login", async (req, res) => {
       return res.status(401).send("Wrong password");
     }
 
+    // Start session after successful login
+    req.session.user = { email: req.body.email }; // You can store any user data you need in the session
     // Successful login, redirect to home page
     res.redirect("/home");
   } catch (error) {
