@@ -19,18 +19,17 @@ router.post("/login", async (req, res) => {
       check.password
     );
 
-    if (!isPasswordMatch) {
-      return res.status(401).send("Falsches Passwort");
+    //check if password is the same like in db
+    if (req.body.password != check.password) {
+      return res.status(401).send("wrong password");
     }
 
-    // Erfolgreiche Anmeldung, Weiterleitung zur Startseite
-    res.redirect("/home");
+    // login
+    res.redirect("/");
   } catch (error) {
-    console.error("Fehler beim Einloggen:", error);
-    res.status(500).send("Ein Fehler ist aufgetreten");
+    console.error("error during login:", error);
+    res.status(500).send("there is a error");
   }
 });
-
-// Weitere authentifizierungsbezogene Routen hier hinzufügen
 
 module.exports = router;
