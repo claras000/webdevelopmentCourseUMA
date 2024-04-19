@@ -4,9 +4,14 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const path = require("path");
 
-const userController = require("./controllers/userController");
-const authController = require("./controllers/authController");
+const userController = require("./controllers/registerController");
+const authController = require("./controllers/loginController");
 const mainController = require("./controllers/mainController");
+const aboutController = require("./controllers/aboutController");
+const chatbotController = require("./controllers/chatbotController");
+const productsController = require("./controllers/productsController");
+const contactController = require("./controllers/contactController");
+const policyController = require("./controllers/policyController");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -38,6 +43,11 @@ app.use((req, res, next) => {
 app.use("/", userController); // Routing to login
 app.use("/", authController); // Route to register
 app.use("/", mainController); // Routing to main
+app.use("/", aboutController); // Routing to about
+app.use("/", chatbotController); // Routing to chatbot
+app.use("/", productsController); // Routing to products
+app.use("/", contactController); // Routing to contact
+app.use("/", policyController); // Routing to policy
 
 app.listen(PORT, () => {
   console.log(`Server gestartet auf http://localhost:${PORT}`);
