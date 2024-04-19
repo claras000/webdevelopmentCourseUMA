@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hardware Webshop egister</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/main.css"
+    />
+    <!-- put script here -->
+    <script src=""></script>
+  </head>
+  <body>
+    <%- include('nav') %>
+    <!-- #register-->
+    <section class="register">
+      <h1><b>Register Now</b></h1>
+      <form action="/register" method="post">
+        <label for="firstName">First Name:</label><br />
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          required
+        /><br /><br />
+
+        <label for="lastName">Last Name:</label><br />
+        <input type="text" id="lastName" name="lastName" required /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="password">Password:</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+
+        <label for="confirmPassword">Confirm Password:</label><br />
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          required
+        /><br /><br />
+
+        <button type="submit">Register</button>
+      </form>
+    </section>
+    <!-- #end register -->
+  </body>
+</html>

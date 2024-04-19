@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hardware Webshop Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/CSS/main.css"
+    />
+  </head>
+  <body>
+    <%- include('nav') %>
+
+    <!-- #header -->
+    <section>
+      <img src="../images/Slider.png" alt="slider" class="slider" />
+    </section>
+    <!-- #end header -->
+
+    <div>
+      <h2 class="text-center m-5 p-5">Our Featured Products</h2>
+      <!-- js input here-->
+      <div id="products" class="row m-5"></div>
+    </div>
+
+    <!-- script for products -->
+    <script src="../JS/home.js"></script>
+  </body>
+</html>
