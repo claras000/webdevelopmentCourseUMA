@@ -12,6 +12,8 @@ const chatbotController = require("./controllers/chatbotController");
 const productsController = require("./controllers/productsController");
 const contactController = require("./controllers/contactController");
 const policyController = require("./controllers/policyController");
+const profilController = require("./controllers/profilController");
+const shoppingcardController = require("./controllers/shoppingcardController");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -48,6 +50,8 @@ app.use("/", chatbotController); // Routing to chatbot
 app.use("/", productsController); // Routing to products
 app.use("/", contactController); // Routing to contact
 app.use("/", policyController); // Routing to policy
+app.use("/", profilController); // Routing to profil
+app.use("/", shoppingcardController); // Routing to shoppingcard
 
 app.listen(PORT, () => {
   console.log(`Server gestartet auf http://localhost:${PORT}`);
