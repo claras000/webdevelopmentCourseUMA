@@ -134,3 +134,90 @@ nav a {
   padding: 20px;
   text-align: center;
 }
+
+.policy-section {
+  padding: 50px 20px;
+  background-color: #f0f0f0;
+}
+
+.policy-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.policy-section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.policy-section a {
+  color: #1570ef;
+  font-weight: bold;
+}
+
+.policy-section a:hover {
+  text-decoration: underline;
+}
+
+.chatbot-icon {
+  position: fixed;
+  bottom: 30%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 124px;
+  height: 145px;
+}
+
+.underline {
+  width: 829px;
+  height: 4px;
+  background-color: #1570ef;
+  filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-bottom: 20px; /* Espaço abaixo da linha */
+}
+
+.no-space {
+  line-height: 1;
+}
+
+.about_us_image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-right: 20px; /* Adicionando margem à direita */
+}
+
+.user-greeting {
+  background-color: #1570ef;
+  color: white;
+  padding: 8px;
+  /*/display: inline-block; /* Permite que o bloco se ajuste ao tamanho do conteúdo */
+  border-radius: 4px; /* Borda arredondada */
+  width: 700px; 
+}
+
+.user-icon {
+  width: 20px; /* Ajuste o tamanho da imagem conforme necessário */
+  height: 20px;
+  margin-right: 5px; /* Espaçamento entre a imagem e o texto */
+}
+
+.user-section {
+  padding: 25px; /* Adiciona espaço entre a linha azul e o restante do texto */
+}
+
+.user-section-begin {
+  padding: 15px;
+}
+
+.user-underline {
+  width: 700px;
+  height: 2px;
+  background-color: #1570ef;
+  filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-bottom: 20px; /* Espaço abaixo da linha */
+}
+
+.space {
+  padding: 10px;
+}
