@@ -1,34 +1,33 @@
 const express = require("express");
 const router = express.Router();
 const collection = require("../models/users.js");
-const bcrypt = require("bcrypt");
 
 router.get("/login", (req, res) => {
   res.render("login");
 });
 
 router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
   try {
-    const check = await collection.findOne({ email: req.body.email });
-    if (!check) {
+    const user = await collection.findOne({ email: email });
+
+    if (!user) {
       return res.status(401).send("Keine E-Mail gefunden.");
     }
 
-    const isPasswordMatch = await bcrypt.compare(
-      req.body.password,
-      check.password
-    );
-
-    //check if password is the same like in db
-    if (req.body.password != check.password) {
-      return res.status(401).send("wrong password");
+    // Check if password is correct
+    if (password != user.password) {
+      return res.status(401).send("Incorrect password");
     }
 
-    // login
+    // Store user ID in session
+    req.session.userId = user._id;
+
+    // Redirect after successful login
     res.redirect("/");
   } catch (error) {
-    console.error("error during login:", error);
-    res.status(500).send("there is a error");
+    console.error("Error during login:", error);
+    res.status(500).send("There is an error");
   }
 });
 
