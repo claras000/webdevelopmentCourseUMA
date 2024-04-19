@@ -40,8 +40,8 @@ async function addProductsToDatabase() {
 addProductsToDatabase();
 
 // Route handler to fetch products from the database
-/*
-router.get("/", async (req, res) => {
+
+router.get("/p", async (req, res) => {
   try {
     const products = await Product.find();
     res.json(products);
@@ -50,7 +50,6 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: "Error fetching products" });
   }
 });
-*/
 
 router.get("/", (req, res) => {
   res.render("home"); // render about jsx
