@@ -51,7 +51,7 @@ router.get("/p", async (req, res) => {
   }
 });
 
-router.get("/", (req, res) => {
+router.get("/home", (req, res) => {
   res.render("home"); // render about jsx
 });
 

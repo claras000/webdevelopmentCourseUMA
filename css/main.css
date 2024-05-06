@@ -4,7 +4,7 @@
 
 /*basic elements*/
 .button {
-  background-color: #1570ef;
+  background-color: #ef4815;
   border-radius: 25px;
   font-family: "DM Sans", sans-serif;
   padding: 5px 20px;
@@ -122,6 +122,13 @@ nav a {
   width: 100%;
 }
 
+.returnButton {
+  background-color: #6383ae !important;
+  border-radius: 25px;
+  font-family: "DM Sans", sans-serif;
+  padding: 5px 20px;
+}
+
 /* product page*/
 .Products {
   display: grid;
@@ -193,7 +200,7 @@ nav a {
   padding: 8px;
   /*/display: inline-block; /* Permite que o bloco se ajuste ao tamanho do conteúdo */
   border-radius: 4px; /* Borda arredondada */
-  width: 700px; 
+  width: 700px;
 }
 
 .user-icon {

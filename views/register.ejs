@@ -15,13 +15,12 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="../css/main.css"
+      href="/CSS/main.css"
     />
     <!-- put script here -->
     <script src=""></script>
   </head>
   <body>
-    <%- include('nav') %>
     <!-- #register-->
     <section class="register">
       <h1><b>Register Now</b></h1>
@@ -55,8 +54,16 @@
           name="confirmPassword"
           required
         /><br /><br />
-
-        <button type="submit">Register</button>
+        <% if (message) { %>
+        <p><%= message %></p>
+        <!-- checking if register right -->
+        <% } %>
+        <button type="submit" id="submitButton" class="button btn btn-primary">
+          Register
+        </button>
+        <a href="/" Link class="returnButton">
+          After registration please Login
+        </a>
       </form>
     </section>
     <!-- #end register -->
