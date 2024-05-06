@@ -21,59 +21,9 @@
     <script src=""></script>
   </head>
   <body>
-    <!-- #navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
-      <a href="home.html" Link class="logo">
-        <img src="../images/logo.png" alt="Logo" class="imgLogo" />
-      </a>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active nav-item-custom">
-            <a class="nav-link" href="home.html" id="home">Home </a>
-          </li>
-
-          <li class="nav-item active nav-item-custom">
-            <a class="nav-link" href="about.html" id="about">About </a>
-          </li>
-
-          <li class="nav-item active nav-item-custom">
-            <a class="nav-link" href="products.html" id="product">Products</a>
-          </li>
-
-          <li class="nav-item active nav-item-custom">
-            <a class="nav-link" href="contact.html" id="contact">Contact </a>
-          </li>
-          <li>
-            <a
-              href="shoppingcard.html"
-              Link
-              class="shoppingButton"
-              id="shoppingcard"
-            >
-              <img
-                src="../images/shoppingcard.png"
-                alt="shoppingcard icon"
-                class="iconSize"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="profil.html" Link class="profilButton" id="profil">
-              <img src="../images/user.png" alt="user icon" class="iconSize" />
-            </a>
-          </li>
-          <li>
-            <a href="login.html" Link class="LoginStatus">
-              <button type="button" class="buttonLogin btn btn-primary">
-                Login
-              </button>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- #end navbar -->
+    <!-- #nav-->
+    <%- include('nav') %>
+    <!-- #end nav -->
     <!-- Policy Section -->
     <section class="policy-section">
       <div class="container">
@@ -121,12 +71,6 @@
     </section>
     <!-- End Policy Section -->
 
-    <!-- Chatbot Icon -->
-    <img
-      src=".. /images/helpButton.png"
-      alt="Chatbot Icon"
-      class="chatbot-icon"
-    />
     <!-- End Chatbot Icon -->
     <%- include('footer') %>
     <script src=""></script>
