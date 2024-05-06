@@ -25,8 +25,21 @@
     <%- include('nav') %>
     <!-- #end nav -->
 
+    <!-- #rchatbot-->
+    <h1>IT Hardware Chatbot</h1>
+    <input
+      type="text"
+      id="questionInput"
+      placeholder="Ask a technical question about IT hardware..."
+    />
+    <button onclick="askQuestion()">Ask</button>
+    <div id="answerOutput"></div>
+    <!-- #end chatbot -->
+
     <!-- #footer -->
     <%- include('footer') %>
     <!-- #end footer -->
+    <!-- script for products -->
+    <script src="../JS/chatbot.js"></script>
   </body>
 </html>
