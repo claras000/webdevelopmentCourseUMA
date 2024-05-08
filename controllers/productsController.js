@@ -5,8 +5,6 @@ router.get("/products", (req, res) => {
   res.render("products"); // render about jsx
 });
 
-module.exports = router;
-
 // Route handler to fetch products from the database
 router.get("/p", async (req, res) => {
   try {
@@ -17,3 +15,5 @@ router.get("/p", async (req, res) => {
     res.status(500).json({ error: "Error fetching products" });
   }
 });
+
+module.exports = router;
