@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const collection = require("../models/users.js");
 
-router.get("/login", (req, res) => {
+router.get("/", (req, res) => {
   res.render("login");
 });
 
-router.post("/login", async (req, res) => {
+router.post("/", async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await collection.findOne({ email: email });
@@ -24,7 +24,7 @@ router.post("/login", async (req, res) => {
     req.session.userId = user._id;
 
     // Redirect after successful login
-    res.redirect("/");
+    res.redirect("/home");
   } catch (error) {
     console.error("Error during login:", error);
     res.status(500).send("There is an error");

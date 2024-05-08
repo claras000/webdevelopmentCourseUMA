@@ -1,39 +1,30 @@
-// Annahme: Sie haben eine Liste von Produkten, die Sie anzeigen möchten
-var products = [
-  {
-    name: "CPU",
-    price: "$10",
-    image: "../images/cpu.jpg",
-    buyLink: "link-zu-kaufen-produkt-1.html",
-  },
-  {
-    name: "Geafic Card",
-    price: "$20",
-    image: "../images/graphic_Card.jpg",
-    buyLink: "link-zu-kaufen-produkt-2.html",
-  },
-  {
-    name: "headphones",
-    price: "$30",
-    image: "../images/headphones.jpg",
-    buyLink: "link-zu-kaufen-produkt-3.html",
-  },
-];
-
 var productsDiv = document.getElementById("products");
-var productsHTML = "";
 
-products.forEach(function (product) {
-  productsHTML += "<div class='product col-md-4 '>";
-  productsHTML +=
-    "<img src='" + product.image + "' alt='" + product.name + "' />";
-  productsHTML += "<div class='d-flex justify-content-between'>";
-  productsHTML += "<h3>" + product.name + "</h3>";
-  productsHTML += "<p>Preis: " + product.price + "</p></div>";
-  productsHTML +=
-    "<a href='" + product.buyLink + "' class='buy-button'>Kaufen</a>";
-  productsHTML += "</div>";
-});
+// Function to handle the click event on the "Kaufen" button
+function handleBuyButtonClick(product) {
+  alert("You bought the product");
+}
 
-// Setzen Sie den HTML-Inhalt der products-Div
-productsDiv.innerHTML = productsHTML;
+// Fetch products from backend
+fetch("/p")
+  .then((response) => response.json())
+  .then((products) => {
+    var productsHTML = "";
+    products.forEach(function (product) {
+      productsHTML += "<div class='product col-md-4 '>";
+      productsHTML +=
+        "<img src='" + product.image + "' alt='" + product.name + "' />";
+      productsHTML += "<div class='d-flex justify-content-between'>";
+      productsHTML += "<h3>" + product.name + "</h3>";
+      productsHTML += "<p>price: " + product.price + "</p></div>";
+      // Add event listener to the "Buy" button
+      productsHTML +=
+        "<button class='buy-button' onclick='handleBuyButtonClick(" +
+        JSON.stringify(product) +
+        ")'>Buy</button>";
+      productsHTML += "</div>";
+    });
+
+    productsDiv.innerHTML = productsHTML;
+  })
+  .catch((error) => console.error("Error fetching products:", error));
