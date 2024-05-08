@@ -9,14 +9,16 @@ function handleBuyButtonClick(product) {
     },
     body: JSON.stringify(product),
   })
-  .then((response) => {
-    if (response.ok) {
-      window.location.href = "/shoppingcard"; // Redirecionar para a página do carrinho após adicionar o produto ao carrinho
-    } else {
-      alert("Failed to add product to cart.");
-    }
-  })
-  .catch((error) => console.error("Error adding product to cart:", error));
+    .then((response) => {
+      if (response.ok) {
+        alert("Product added to warenkorb successfully!");
+      } else {
+        alert("Failed to add product to warenkorb.");
+      }
+    })
+    .catch((error) =>
+      console.error("Error adding product to warenkorb:", error)
+    );
 }
 
 // Fetch products from backend
@@ -41,4 +43,4 @@ fetch("/p")
 
     productsDiv.innerHTML = productsHTML;
   })
-  .catch((error) => console.error("Nao temos em stock", error));
+  .catch((error) => console.error("Nao temos em", error));
