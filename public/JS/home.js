@@ -28,3 +28,58 @@ fetch("/p")
     productsDiv.innerHTML = productsHTML;
   })
   .catch((error) => console.error("Error fetching products:", error));
+document.addEventListener("DOMContentLoaded", function() {
+  var slides = document.querySelectorAll('.slide');
+  var currentSlide = 0;
+  
+  function showSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    slides[index].classList.add('active');
+    currentSlide = index;
+  }
+  
+  function nextSlide() {
+    var nextIndex = (currentSlide + 1) % slides.length;
+    showSlide(nextIndex);
+  }
+  
+  function previousSlide() {
+    var prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prevIndex);
+  }
+  
+  // Mostrar a primeira imagem inicialmente
+  showSlide(0);
+  
+  // Adicionar listeners para os botões de navegação
+  document.getElementById('nextBtn').addEventListener('click', nextSlide);
+  document.getElementById('prevBtn').addEventListener('click', previousSlide);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var slides = document.querySelectorAll('.slide');
+  var currentSlide = 0;
+  
+  function showSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    slides[index].classList.add('active');
+    currentSlide = index;
+  }
+  
+  function nextSlide() {
+    var nextIndex = (currentSlide + 1) % slides.length;
+    showSlide(nextIndex);
+  }
+  
+  function previousSlide() {
+    var prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prevIndex);
+  }
+  
+  // Mostrar a primeira imagem inicialmente
+  showSlide(0);
+  
+  // Adicionar listeners para os botões de navegação
+  document.getElementById('nextBtn').addEventListener('click', nextSlide);
+  document.getElementById('prevBtn').addEventListener('click', previousSlide);
+});

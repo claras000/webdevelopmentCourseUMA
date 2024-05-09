@@ -479,3 +479,24 @@ input {
 .contact-info-box p {
   margin: 0; 
 }
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  width: 100%; /* Largura total do container */
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 1; /* Cada slide ocupa o espaço igualmente */
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

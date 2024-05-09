@@ -24,9 +24,37 @@
     <!-- #end nav -->
 
     <!-- #header -->
-    <section>
-      <img src="../images/Slider.png" alt="slider" class="slider" />
-    </section>
+    <div class="slider-container">
+      <div class="slide">
+        <img src="../images/Slider.png" alt="Imagem 1">
+      </div>
+      <div class="slide">
+        <img src="../images/cpu.jpg" alt="Imagem 2">
+      </div>
+      <div class="slide">
+        <img src="../images/memory.jpg" alt="Imagem 3">
+      </div>
+    </div>
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlides() {
+    slides.forEach(slide => {
+      slide.style.display = 'none';
+    });
+
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = 'block';
+    setTimeout(showSlides, 2000); // Muda a imagem a cada 2 segundos
+  }
+
+  showSlides();
+</script>
+
     <!-- #end header -->
 
     <div>
