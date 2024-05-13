@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
     // Store user ID in session
     req.session.userId = user._id;
 
-    // Redirect after successful login
+    // send to home after successful login
     res.redirect("/home");
   } catch (error) {
     console.error("Error during login:", error);

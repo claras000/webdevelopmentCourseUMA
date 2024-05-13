@@ -1,0 +1,12 @@
+webdevelopement
+
+webshop for Hardware - a shop to buy computer hardware
+
+by Joao, Igor and Clara Osterburg Correa
+
+# how to run project
+
+- make db called my_database in mongodb
+- fill in at controller/chatbotController.js your OpenAi apiKey code
+- run npm install
+- run npm start

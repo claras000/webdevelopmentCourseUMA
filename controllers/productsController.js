@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/products", (req, res) => {
-  res.render("products"); // render about jsx
+  res.render("products");
 });
 
-// Route handler to fetch products from the database
+//get product from db
 router.get("/p", async (req, res) => {
   try {
     const products = await Product.find();

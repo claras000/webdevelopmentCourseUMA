@@ -1,9 +1,9 @@
 const express = require("express");
-const fetch = require("node-fetch"); // Import fetch if you're using Node.js
+const fetch = require("node-fetch");
 const router = express.Router();
 
 router.get("/chatbot", (req, res) => {
-  res.render("chatbot"); // render about jsx
+  res.render("chatbot");
 });
 
 router.post("/ask-question", async (req, res) => {

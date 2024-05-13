@@ -3,7 +3,7 @@ const router = express.Router();
 const Product = require("../models/product"); // Import Product model
 
 //add info to db
-// Sample data from your frontend JS
+// fill the db for the first init
 const productsData = [
   {
     name: "Graphic Card",
