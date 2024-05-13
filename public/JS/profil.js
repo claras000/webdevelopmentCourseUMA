@@ -6,9 +6,10 @@ fetch("/user")
   .then((user) => {
     document.getElementById("user-info").innerHTML = `
                     <h2>User Information</h2>
-                    <p>first name: ${user.firstName}</p>
-                    <p>last name: ${user.lastName}</p>
-                    <p>Email: ${user.email}</p>
+                    <br/> <br/>
+                    <p><b>first name:</b> ${user.firstName}</p>
+                    <p><b>last name:</b> ${user.lastName}</p>
+                    <p><b>Email:</b> ${user.email}</p>
                     <!-- Weitere Informationen je nach Bedarf -->
                 `;
     console.log(document.getElementById("user-info").innerHTML);

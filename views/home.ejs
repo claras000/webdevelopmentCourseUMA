@@ -26,34 +26,34 @@
     <!-- #header -->
     <div class="slider-container">
       <div class="slide">
-        <img src="../images/Slider.png" alt="Imagem 1">
+        <img src="../images/Slider.png" alt="Imagem 1" />
       </div>
       <div class="slide">
-        <img src="../images/Slider3.png" alt="Imagem 2">
+        <img src="../images/Slider3.png" alt="Imagem 2" />
       </div>
       <div class="slide">
-        <img src="../images/Slider2.png" alt="Imagem 3">
+        <img src="../images/Slider2.png" alt="Imagem 3" />
       </div>
     </div>
-<script>
-  let slideIndex = 0;
-  const slides = document.querySelectorAll('.slide');
+    <script>
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(".slide");
 
-  function showSlides() {
-    slides.forEach(slide => {
-      slide.style.display = 'none';
-    });
+      function showSlides() {
+        slides.forEach((slide) => {
+          slide.style.display = "none";
+        });
 
-    slideIndex++;
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
-    slides[slideIndex - 1].style.display = 'block';
-    setTimeout(showSlides, 2000); // Muda a imagem a cada 2 segundos
-  }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Muda a imagem a cada 2 segundos
+      }
 
-  showSlides();
-</script>
+      showSlides();
+    </script>
 
     <!-- #end header -->
 
@@ -69,5 +69,7 @@
     <!-- #end footer -->
     <!-- script for products -->
     <script src="../JS/home.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
