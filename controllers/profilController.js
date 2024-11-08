@@ -2,10 +2,13 @@ const express = require("express");
 const router = express.Router();
 const Users = require("../models/users");
 
+/**
+ * Profil Controller
+ */
+
 router.get("/profil", (req, res) => {
   // Check if userId exists in session
   if (req.session.userId) {
-    // Set userID
     const userID = req.session.userId;
     console.log("User ID:", userID);
 
@@ -15,7 +18,9 @@ router.get("/profil", (req, res) => {
   }
 });
 
-// display curretn user as json at /user
+/**
+ * display current user as json
+ */
 router.get("/user", async (req, res) => {
   try {
     const userID = req.session.userId;

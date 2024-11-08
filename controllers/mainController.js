@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Product = require("../models/product"); // Import Product model
 
+/**
+ * Main Controller
+ */
+
 //add info to db
 // fill the db for the first init
 const productsData = [
@@ -43,16 +47,15 @@ const productsData = [
   },
 ];
 
-// Function to add products to the database
+/**
+ * Function to add products to the database
+ */
 async function addProductsToDatabase() {
   try {
-    // Check if there are existing products in the database
     const existingProducts = await Product.find();
     if (existingProducts.length === 0) {
-      // If no existing products, loop through the productsData array and create instances of Product model
       for (let product of productsData) {
         const newProduct = new Product(product);
-        // Save each product to the database
         await newProduct.save();
       }
       console.log("Products added to database successfully");
@@ -66,10 +69,8 @@ async function addProductsToDatabase() {
   }
 }
 
-// Call the function to add products to the database
 addProductsToDatabase();
 
-// Route handler to fetch products from the database
 router.get("/p", async (req, res) => {
   try {
     const products = await Product.find();
@@ -81,7 +82,7 @@ router.get("/p", async (req, res) => {
 });
 
 router.get("/home", (req, res) => {
-  res.render("home"); // render about jsx
+  res.render("home");
 });
 
 module.exports = router;

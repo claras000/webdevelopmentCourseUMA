@@ -2,13 +2,17 @@ const express = require("express");
 const fetch = require("node-fetch");
 const router = express.Router();
 
+/**
+ * Chatbot Controller with Open AI Connection
+ */
+
 router.get("/chatbot", (req, res) => {
   res.render("chatbot");
 });
 
 router.post("/ask-question", async (req, res) => {
   const { question } = req.body;
-  const apiKey = "sk-proj-FCQZ8GvZEj0gjBPW6IHXT3BlbkFJjjqTrKZy22qrp5XEQKi7";
+  const apiKey = "please enter your key here"; // please fill in your chatGbt key here
   console.log(question);
 
   try {
@@ -24,7 +28,8 @@ router.post("/ask-question", async (req, res) => {
         messages: [
           {
             role: "system",
-            content: "you are a shop assistent. answer the technical question",
+            content:
+              "you are a shop assistent. answer the technical question about it hardware. if its not a question about it hardware remind the customer to ask only questions about it hjardware",
           },
           {
             role: "user",

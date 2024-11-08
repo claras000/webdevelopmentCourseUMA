@@ -1,12 +1,44 @@
-webdevelopement
+##Project Name
 
 webshop for Hardware - a shop to buy computer hardware
+Univerity Projekt | webdevelopement
 
-by Joao, Igor and Clara Osterburg Correa
+## 🚀 Features
 
-# how to run project
+- Webshop Prototype
+- Login feature
+- Chatgbt Chatbot Integration
+
+## 🛠 Installation
 
 - make db called my_database in mongodb
+- clone the repository and go to the project dictionary
 - fill in at controller/chatbotController.js your OpenAi apiKey code
 - run npm install
 - run npm start
+
+## 🧰 Used Tools
+
+- HTML
+- CSS, Bootstrap
+- Javascript
+- Node.js
+- Express
+- MongoDB, Mongoose
+
+##Use programme
+
+- you are on port 5000 and on the login page
+- go to the register page and create a profile
+- now go back and log in
+- now you are in the shop
+- have a look around
+- your profile shows your data
+- and products you can shop
+- use the logout button in the navigation to log out again.
+
+##Owners
+
+Clara
+Igor
+João

@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const collection = require("../models/users.js");
 
+/**
+ * Register Controller
+ */
+
 router.get("/register", (req, res) => {
   res.render("register", { message: null });
 });

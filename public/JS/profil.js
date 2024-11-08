@@ -1,5 +1,6 @@
-//fetch user INfo
-//to do style user info
+/**
+ * User Handler for fetching user Information and styling
+ */
 
 fetch("/user")
   .then((response) => response.json())

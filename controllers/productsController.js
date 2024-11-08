@@ -1,11 +1,17 @@
 const express = require("express");
 const router = express.Router();
 
+/**
+ * Products Controller
+ */
+
 router.get("/products", (req, res) => {
   res.render("products");
 });
 
-//get product from db
+/**
+ * pulling all products from db
+ */
 router.get("/p", async (req, res) => {
   try {
     const products = await Product.find();

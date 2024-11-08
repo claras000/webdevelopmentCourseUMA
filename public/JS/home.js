@@ -1,3 +1,7 @@
+/**
+ * Main page Handler - handles styling and backend interaction
+ */
+
 var productsDiv = document.getElementById("products");
 
 function handleBuyButtonClick(product) {

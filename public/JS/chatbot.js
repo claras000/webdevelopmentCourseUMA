@@ -1,3 +1,7 @@
+/**
+ * Chatbot Handler - handles Chatbot Interaction
+ */
+
 async function askQuestion() {
   const questionInput = document.getElementById("questionInput").value;
   const answerOutput = document.getElementById("answerOutput");

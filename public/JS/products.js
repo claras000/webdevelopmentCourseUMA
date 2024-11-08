@@ -1,24 +1,12 @@
+/**
+ * Product Handler for Product fetching and styling
+ */
+
 var productsDiv = document.getElementById("products");
 
 // buy funtcion
 function handleBuyButtonClick(product) {
-  fetch("/add-to-cart", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(product),
-  })
-    .then((response) => {
-      if (response.ok) {
-        alert("Product added to warenkorb successfully!");
-      } else {
-        alert("Failed to add product to warenkorb.");
-      }
-    })
-    .catch((error) =>
-      console.error("Error adding product to warenkorb:", error)
-    );
+  alert("You bought the product");
 }
 
 // Fetch products from backend
